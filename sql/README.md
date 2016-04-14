@@ -1,4 +1,4 @@
-# Data schema
+## Data schema
 
 MashineParts (Id int, Name string)
 
@@ -9,6 +9,8 @@ Suppliers (Id int, Name string)
 Deliveries (Id int, RegionId int, SupplierId int, [Date] Date)
 
 DeliveryLines (Id int, DeliveryId int, MachinePartId int, Price int, Quantity int)
+
+## Queries
 
 * get list of suppliers’ names that made at least one delivery to region with name "A"
 
@@ -46,6 +48,6 @@ left join (
 	select r1.* from regions r1
 	inner join deliveries d1 on r1.id = d1.supplierid
 	inner join suppliers s1 on d1.regionid = s1.id
-	where s1.name = 'A') ss on r.id = ss.id
+	where s1.name = 'X') ss on r.id = ss.id
 where ss.id is null
 ```
