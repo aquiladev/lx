@@ -1,9 +1,13 @@
 # Data schema
 
 MashineParts (Id int, Name string)
+
 Regions (Id int, Name string)
+
 Suppliers (Id int, Name string)
+
 Deliveries (Id int, RegionId int, SupplierId int, [Date] Date)
+
 DeliveryLines (Id int, DeliveryId int, MachinePartId int, Price int, Quantity int)
 
 * get list of suppliers’ names that made at least one delivery to region with name "A"
